@@ -80,7 +80,7 @@ spec:
     - destination:
         host: eshop-backend
         port:
-          number: 8090         
+          number: 8090
   - match:
     - uri:
         exact: /
