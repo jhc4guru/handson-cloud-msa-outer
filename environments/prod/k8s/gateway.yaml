@@ -34,13 +34,13 @@ spec:
         subset: v1
         port:
           number: 8091
-      weight: 50
+      weight: 0
     - destination:
         host: eshop-cartservice
         subset: v2
         port:
           number: 8091
-      weight: 50
+      weight: 100
   - match:
     - uri:
         prefix: /api/products
