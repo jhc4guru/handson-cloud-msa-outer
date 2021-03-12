@@ -31,8 +31,16 @@ spec:
     route:
     - destination:
         host: eshop-cartservice
+        subset: v1
         port:
           number: 8091
+      weight: 50
+    - destination:
+        host: eshop-cartservice
+        subset: v2
+        port:
+          number: 8091
+      weight: 50
   - match:
     - uri:
         prefix: /api/products
@@ -95,3 +103,20 @@ spec:
         host: eshop-frontend
         port:
           number: 8080
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: eshop-cartservice
+spec:
+  host: eshop-cartservice
+  trafficPolicy:
+    tls:
+      mode: ISTIO_MUTUAL
+  subsets:
+  - name: v1
+    labels:
+      version: v1
+  - name: v2
+    labels:
+      version: v2
