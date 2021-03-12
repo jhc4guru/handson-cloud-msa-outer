@@ -3,7 +3,6 @@ kind: Deployment
 metadata:
   name: eshop-frontend
 spec:
-  replicas: 2
   selector:
     matchLabels:
       app: eshop-frontend
@@ -11,11 +10,10 @@ spec:
     metadata:
       labels:
         app: eshop-frontend
-        version: v1
     spec:
       containers:
         - name: eshop-frontend
-          image: gcr.io/architect-certification-289902/34/eshop-frontend:3
+          image: eshop-frontend
           ports:
           - containerPort: 8080
           resources:
