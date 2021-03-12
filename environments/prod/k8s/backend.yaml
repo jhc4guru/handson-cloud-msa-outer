@@ -24,6 +24,10 @@ spec:
               value: http://eshop-productservice:8092
             - name: SPRING_RABBITMQ_HOST
               value: rabbitmq.default.svc.cluster.local
+            - name: SPRING_RABBITMQ_USERNAME
+              value: rabbitmq_username
+            - name: SPRING_RABBITMQ_PASSWORD
+              value: rabbitmq_password
           resources:
             requests:
               cpu: 500m
