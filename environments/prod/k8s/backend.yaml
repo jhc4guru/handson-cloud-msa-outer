@@ -25,9 +25,9 @@ spec:
             - name: SPRING_RABBITMQ_HOST
               value: rabbitmq.default.svc.cluster.local
             - name: SPRING_RABBITMQ_USERNAME
-              value: rabbitmq_username
+              value: rabbitmq
             - name: SPRING_RABBITMQ_PASSWORD
-              value: rabbitmq_password
+              value: password
           resources:
             requests:
               cpu: 500m
